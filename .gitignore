@@ -44,5 +44,6 @@ release
 *.out
 *.app
 
-# IDEs / Editors
+# IDEs / Editors and results
+results/
 .vscode/
