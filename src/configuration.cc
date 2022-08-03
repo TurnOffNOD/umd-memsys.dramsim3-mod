@@ -283,9 +283,7 @@ void Config::InitThermalParams() {
         bank_order = GetInteger("thermal", "bank_order", 1);
         bank_layer_order = GetInteger("thermal", "bank_layer_order", 0);
         num_row_refresh =
-            static_cast<int>(ceil(rows / (36 * 1e11 / (tREFI * tCK)))); //tCK's unit is ns, but the code only see the number.
-			// original digit 64 is refer to 64ms. Physical time unit ms, ns is adjusted by "1e6" constant nubmer
-				//When I want to change cell refresh interval, I should also modify this "64ms"
+            static_cast<int>(ceil(rows / (64 * 1e6 / (tREFI * tCK))));
         chip_dim_x = reader.GetReal("thermal", "chip_dim_x", 0.01);
         chip_dim_y = reader.GetReal("thermal", "chip_dim_y", 0.01);
         amb_temp = reader.GetReal("thermal", "amb_temp", 40);
