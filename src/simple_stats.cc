@@ -390,6 +390,7 @@ void SimpleStats::UpdateEpochStats() {
         vec_doubles_["sref_energy"][i] = sref_energy;
         background_energy += act_stb + pre_stb + sref_energy;
     }
+    background_energy = 0.0;
 
     UpdateHistoBins();
 
@@ -450,6 +451,7 @@ void SimpleStats::UpdateFinalStats() {
         vec_doubles_["sref_energy"][i] = sref_energy;
         background_energy += act_stb + pre_stb + sref_energy;
     }
+    background_energy = 0.0;
 
     // histograms
     UpdateHistoBins();
