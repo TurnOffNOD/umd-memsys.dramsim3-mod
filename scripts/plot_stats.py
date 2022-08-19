@@ -139,7 +139,7 @@ if __name__ == '__main__':
             plot_epochs(j_data, label, unit, prefix)
     else:
         data_units = {'read_latency': 'cycles',
-                      'write_latency': 'cycles',
-                      'interarrival_latency': 'cycles'}
+                      'write_latency': 'cycles'}#,
+                      #'interarrival_latency': 'cycles'}
         for label, unit in data_units.items():
             plot_histogram(j_data, label, unit, prefix)
