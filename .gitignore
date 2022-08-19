@@ -45,4 +45,4 @@ release
 *.app
 
 # IDEs / Editors
-.vscode/
+.vscode/*
