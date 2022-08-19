@@ -3,12 +3,16 @@
 Generate time series graphs of power/bandwidth/energy...
 """
 
+import matplotlib
+matplotlib.use('pdf') # matplotlib set backend must before import matplotlib.pyplot
+print(matplotlib.get_backend())
+
+import matplotlib.pyplot as plt
 import argparse
 import json
 import os
 import sys
 import numpy as np
-import matplotlib.pyplot as plt
 
 
 def extract_epoch_data(json_data, label, merge_channel=True):
