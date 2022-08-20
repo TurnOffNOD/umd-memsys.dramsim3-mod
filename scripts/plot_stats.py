@@ -5,7 +5,7 @@ Generate time series graphs of power/bandwidth/energy...
 
 import matplotlib
 matplotlib.use('pdf') # matplotlib set backend must before import matplotlib.pyplot
-print(matplotlib.get_backend())
+#print(matplotlib.get_backend())
 
 import matplotlib.pyplot as plt
 import argparse
