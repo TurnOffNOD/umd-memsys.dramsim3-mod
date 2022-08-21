@@ -36,6 +36,10 @@ def plot_epochs(json_data, label, unit="", output=None):
     y_data = extract_epoch_data(json_data, label)
     x_ticks = [i * cycles_per_epoch for i in range(len(y_data))]
 
+    plt.plot(x_ticks, y_data)
+    #plt.ylim(bottom=0, top=1.1*max(y_data))
+    plt.savefig(output+'_epochs_{}.pdf'.format(label))
+
     #print(y_data)
 
 if __name__ == '__main__':
@@ -63,7 +67,7 @@ if __name__ == '__main__':
         else:
             is_epoch = False
         
-    print(j_data[0]['num_cycles'])
+    #print(j_data[0]['num_cycles'])
 
     prefix = os.path.join(args.dir, args.output)
     if is_epoch:
