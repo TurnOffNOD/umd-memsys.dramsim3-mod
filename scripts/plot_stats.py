@@ -3,12 +3,16 @@
 Generate time series graphs of power/bandwidth/energy...
 """
 
+import matplotlib
+matplotlib.use('pdf') # matplotlib set backend must before import matplotlib.pyplot
+#print(matplotlib.get_backend())
+
+import matplotlib.pyplot as plt
 import argparse
 import json
 import os
 import sys
 import numpy as np
-import matplotlib.pyplot as plt
 
 
 def extract_epoch_data(json_data, label, merge_channel=True):
@@ -135,7 +139,7 @@ if __name__ == '__main__':
             plot_epochs(j_data, label, unit, prefix)
     else:
         data_units = {'read_latency': 'cycles',
-                      'write_latency': 'cycles',
-                      'interarrival_latency': 'cycles'}
+                      'write_latency': 'cycles'}#,
+                      #'interarrival_latency': 'cycles'}
         for label, unit in data_units.items():
             plot_histogram(j_data, label, unit, prefix)
